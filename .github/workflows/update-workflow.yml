@@ -16,12 +16,12 @@ jobs:
       - name: Dependabot
         uses: dependabot/dependabot-core@v1
         with:
-          directory: "/" # Path to the folder containing package.json
+          directory: "/"
           package-manager: "npm"
           open-pull-requests-limit: 5
 
       - name: Install dependencies
-        run: npm install # Ensure dependencies are installed
+        run: npm install
 
       - name: Run Tests
-        run: npm test # Run tests using npm
+        run: npm test
