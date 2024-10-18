@@ -1,0 +1,27 @@
+name: Dependency Updates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1" # Runs every Monday at 12:00 AM UTC
+
+jobs:
+  dependency-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Dependabot
+        uses: dependabot/dependabot-core@v1
+        with:
+          directory: "/" # Path to the folder containing package.json
+          package-manager: "npm"
+          open-pull-requests-limit: 5
+
+      - name: Install dependencies
+        run: npm install # Ensure dependencies are installed
+
+      - name: Run Tests
+        run: npm test # Run tests using npm
