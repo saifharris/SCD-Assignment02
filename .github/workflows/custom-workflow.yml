@@ -3,7 +3,7 @@ name: Custom Workflow
 on:
   push:
     branches:
-      - custom-workflow
+      - main
 
 jobs:
   custom-job:
