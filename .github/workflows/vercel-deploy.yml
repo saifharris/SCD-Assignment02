@@ -27,9 +27,10 @@ jobs:
       - name: Run Tests
         run: npm test
 
-      - name: Deploy to Vercel
+        - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_NAME: ${{ secrets.VERCEL_PROJECT_NAME }}
         run: |
-          npx vercel --token $VERCEL_TOKEN --prod --confirm --scope $VERCEL_ORG_ID
+          npx vercel --token $VERCEL_TOKEN --prod --confirm --name $VERCEL_PROJECT_NAME
+      
