@@ -24,10 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Optional: Ensure ESLint is installed if it's missing from the project
-      - name: Install ESLint
-        run: npm install eslint --save-dev
-        if: failure()
+      - name: Verify ESLint is installed
+        run: npm list eslint || npm install eslint --save-dev
 
       - name: Run Lint
         run: npm run lint

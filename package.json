@@ -5,8 +5,7 @@
   "description": "Scripts for scraping the Heavens Above website.",
   "main": "run.js",
   "scripts": {
-    "start": "node run.js",
-    "lint": "eslint ."
+    "start": "node run.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -28,5 +27,8 @@
   "homepage": "https://github.com/PKUPI/heavens-above#readme",
   "engines": {
     "node": ">=12.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.12.0"
   }
 }
