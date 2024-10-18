@@ -7,10 +7,12 @@
   "scripts": {
     "start": "node run.js",
     "lint": "eslint .",
-    "test": "echo \"No test specified\""
+    "test": "echo \"No test specified\"",
+    "build-docs": "docusaurus build"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "docusaurus": "^1.14.7",
     "request": "^2.88.2"
   },
   "repository": {
