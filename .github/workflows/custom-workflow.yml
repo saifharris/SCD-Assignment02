@@ -1,20 +1,20 @@
-name: Generate Release Notes
+name: Custom Workflow
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - custom-workflow
 
 jobs:
-  release:
+  custom-job:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Generate Release Notes
-        uses: release-drafter/release-drafter@v5
+      - name: Print current directory
+        run: pwd
 
-      - name: Publish Release Notes
-        run: echo "Release notes generated and published successfully"
+      - name: List files in directory
+        run: ls -al
